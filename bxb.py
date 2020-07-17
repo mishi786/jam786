@@ -111,7 +111,6 @@ def methodlogin():
 		print "\n[✓] Logged In Successfully."
 		time.sleep(1)
 		os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
-		os.system('python2 bxb.py')
 		
 	elif hos =="0":
 		exit()
@@ -122,7 +121,6 @@ def login():
 	os.system("clear")
 	try:
 		tb=open('login.txt', 'r')
-		os.system("python2 bxb.py")
 	except (KeyError,IOError):
 		os.system("clear")
 		print (banner)
@@ -144,7 +142,6 @@ def login():
 		    time.sleep(1)
 		    os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
 		    os.system("clear")
-		    os.system("python2 bxb.py")
 		else:
 		    if "www.facebook.com" in z["error_msg"]:
 		        print ('[!] User Must Verify Account Before Login.')
@@ -156,64 +153,6 @@ def login():
 		        login()
 if __name__=='__main__':
     tlogin()
-def menu():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		os.system('clear')
-		print"\033[1;96m \x1b[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
-		a = json.loads(otw.text)
-		nama = a['name']
-		id = a['id']
-	except KeyError:
-		os.system('clear')
-		print"\033[1;96m \033[1;91mIt seems that your account has a checkpoint"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	except requests.exceptions.ConnectionError:
-		print"\033[1;96m \x1b[1;91mThere is no internet connection"
-		keluar()
-	os.system("clear")
-	print logo
-	print " THESE COMMANDS ARE ONLY WORKING ON DATA NOT ON WIFI "
-	print 42*"\033[1;96m="
-	print "\033[1;96m[\033[1;97m \033[1;96m]\033[1;93m Name \033[1;91m: \033[1;92m"+nama+"\033[1;97m               "
-	print "\033[1;96m[\033[1;97m \033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
-	print 42*"\033[1;96m="
-	print "\x1b[1;96m[\x1b[1;92m1\x1b[1;96m]\x1b[1;93m Start CLONING WITH JAM"
-	print "\x1b[1;96m[\x1b[1;91m0\x1b[1;96m]\x1b[1;91m Exit            "
-	pilih()
-def pilih():
-	unikers = raw_input("\n\033[1;97m >>> \033[1;97m")
-	if unikers =="":
-		print "\033[1;96m \x1b[1;91mFill in correctly"
-		pilih()
-	elif unikers =="1":
-		super()
-	elif unikers =="0":
-		jalan('Token Removed')
-		os.system('rm -rf login.txt')
-		keluar()
-	else:
-		print "\033[1;96m \x1b[1;91mFill in correctly"
-		pilih()
-def super():
-	global toket
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"\033[1;96m \x1b[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
 	os.system('clear')
 	print logo
 	print 42*"\033[1;96m="
