@@ -9,7 +9,7 @@ sys.setdefaultencoding('utf8')
 br = mechanize.Browser()
 br.set_handle_robots(False)
 br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
-br.addheaders = [('User-Agent', 'Mozilla/5.0 (Linux; Android 8.1.0; Chrome/79.0.3945.116) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.116 Mobile Safari/537.36')]
+[('user-agent','Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]')]
 br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
 
 
@@ -68,7 +68,7 @@ print "\033[1;96m ========================================="
 print  """\033[1;91m=======================================
 \033[1;96mAuthor  \033[1;93m: \033[1;92mJAM
 \033[1;96mYouTube \033[1;93m: \033[1;92mJAM SHAHRUKH TECHNICAL
-\033[1;96mGitHub  \033[1;93m: \033[1;92mhttps://github.com/FAKHAR143/JAM
+\033[1;96mGitHub  \033[1;93m: \033[1;92mhttps://github.com/JAM
 \033[1;96mpage \033[1;93m: \033[1;92mhttps://www.facebook.com/Jam-Shahrukh
 \033[1;91m======================================="""
 print " \x1b[1;93m============================================================="
